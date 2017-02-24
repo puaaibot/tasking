@@ -1,0 +1,11 @@
+.DS_Store
+*.pyc
+venv
+.idea
+.coverage
+local_settings.py
+*.log
+/static
+db.sqlite3
+node_modules
+docker-compose.yml
