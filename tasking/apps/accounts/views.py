@@ -37,7 +37,9 @@ class SignUpView(APIView):
                     password=password
                 )
                 resp_data = {
-                    'code': 1
+                    'code': 1,
+                    'username': username,
+                    'password': password
                 }
                 status = HTTP_201_CREATED
                 return Response(resp_data, status=status)
