@@ -1,2 +1,4 @@
 Django==1.10
 djangorestframework==3.5.4
+django-cors-headers==2.02
+django-oauth-toolkit==0.12.0
