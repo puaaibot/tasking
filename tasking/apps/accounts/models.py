@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    email = models.EmailField(max_length=255, unique=True, blank=True)
+    mobile = models.CharField(max_length=63, null=True, blank=True)
 
     def __unicode__(self):
-        return self.user.username
+        return self.user.email or self.mobile

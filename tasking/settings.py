@@ -67,7 +67,7 @@ MIDDLEWARE = [
 
 AUTHENTICATION_BACKENDS = (
     'oauth2_provider.backends.OAuth2Backend',
-    'django.contrib.auth.backends.ModelBackend',
+    'tasking.common.backends.ModelEmailMobileBackend',
 )
 
 CORS_ALLOW_CREDENTIALS = True

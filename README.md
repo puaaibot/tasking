@@ -1,37 +1,14 @@
-# A task platform.
+# A task platform -- [API Document](http://rap.taobao.org/workspace/myWorkspace.do?projectId=15165)
 
-
-## Sign Up
-
-post the sign up form
-
+## Start up
 <pre>
-POST /accounts/signup/
-</pre>
+git clone git@github.com:EvansLyb/tasking.git
+cd tasking
+virtualenv venv
+source vent/bin/activate
+pip install -r requirements/common.txt
+python manage.py migrate
+python manage.py runserver
 
-post with the username and password to get auth token
-
-<pre>
-POST /o/token/
-</pre>
-
-get user data
-
-<pre>
-GET /accounts/user/
-</pre>
-
-
-## Sign In
-
-post with the username and password to get auth token
-
-<pre>
-POST /o/token/
-</pre>
-
-get user data
-
-<pre>
-GET /accounts/user/
+Cheers!~
 </pre>
