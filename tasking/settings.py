@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'corsheaders',
 
     'tasking.apps.accounts',
+    'tasking.apps.tasks',
 ]
 
 REST_FRAMEWORK = {
