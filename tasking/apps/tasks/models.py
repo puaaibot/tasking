@@ -18,7 +18,7 @@ class Task(models.Model):
     bounty = models.PositiveIntegerField(verbose_name='报酬', default=0)
     author = models.ForeignKey(User, related_name='published_tasks')
     members = models.ManyToManyField(User, related_name='participated_tasks', blank=True)
-    status = models.CharField(max_length=15, choices=STATUS_CHOICES)
+    status = models.CharField(max_length=15, choices=STATUS_CHOICES, default='recruit')
     created_at = models.FloatField(default=time.time)
     cycle = models.FloatField(verbose_name='任务周期', default=0)
 

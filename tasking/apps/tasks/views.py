@@ -23,7 +23,6 @@ class TaskListView(ListAPIView):
 
 # CRUD
 class TaskViewSet(ModelViewSet):
-    pagination_class = TaskListPagination
     queryset = Task.objects.all()
     permission_classes = (TaskPermission,)
     serializer_class = TaskSerializer
@@ -39,5 +38,9 @@ class TaskViewSet(ModelViewSet):
             query = Q(members__in=[user])
         else:
             query = Q(author=user) | Q(members__in=[user])
-        queryset = queryset.filter(query)
-        return queryset
+        queryset = queryset.filter(query).order_by('-id')
+        # 去重返回
+        return queryset.distinct()
+
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user)

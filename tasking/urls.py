@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from rest_framework.routers import SimpleRouter
 
+from tasking.apps.tasks.views import TaskViewSet
+
+
+router = SimpleRouter()
+router.register(r'tasks', TaskViewSet)
 
 urlpatterns = [
     url(r'^admin', admin.site.urls),
@@ -23,3 +29,5 @@ urlpatterns = [
     url(r'^accounts/', include('tasking.apps.accounts.urls', namespace='accounts')),
     url(r'^tasks/', include('tasking.apps.tasks.urls', namespace='tasks')),
 ]
+
+urlpatterns += router.urls
